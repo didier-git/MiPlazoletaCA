@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mipalzoleta.RepositorioEFcore\Miplazoleta.RepositorioEFcore.csproj" />
+    <ProjectReference Include="..\MiPlazoleta.Entities\MiPlazoleta.Entities.csproj" />
+    <ProjectReference Include="..\Miplazoleta.UseCasePort\Miplazoleta.UseCasePort.csproj" />
+  </ItemGroup>
+
+</Project>
