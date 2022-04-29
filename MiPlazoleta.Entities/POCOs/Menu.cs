@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace MiPlazoleta.Entities.POCOs
 {
-     public class Plato
+     public class Menu
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public Decimal precio { get; set; }
-        public virtual IEnumerable<Menu> Menus { get; set; }
+
+        public virtual IEnumerable<Plato> platos { get; set; }
+
+
 
     }
 }

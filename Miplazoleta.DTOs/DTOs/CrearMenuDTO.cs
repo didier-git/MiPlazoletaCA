@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiPlazoleta.Entities.POCOs
+namespace Miplazoleta.DTOs.DTOs
 {
-     public class Plato
+    public class CrearMenuDTO
     {
-        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public Decimal precio { get; set; }
-        public virtual IEnumerable<Menu> Menus { get; set; }
-
     }
 }

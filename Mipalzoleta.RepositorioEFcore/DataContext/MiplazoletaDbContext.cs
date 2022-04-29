@@ -13,5 +13,19 @@ namespace Mipalzoleta.RepositorioEFcore.DataContext
         public MiplazoletaDbContext(
             DbContextOptions<MiplazoletaDbContext> options) : base( options) { }
         public DbSet<Plato> Platos { get; set; }
+
+        public DbSet<Menu> Menus { get; set; }
+
+
+
+        protected override void OnModelCreating(ModelBuilder model)
+        {
+            model.Entity<Menu>()
+                .HasKey(m => m.Id);
+            model.Entity<Menu>()
+                .HasMany(p => p.platos)
+                .WithMany(m => m.Menus);
+
+        }
     }
 }
