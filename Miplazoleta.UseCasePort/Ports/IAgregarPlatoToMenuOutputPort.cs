@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiPlazoleta.UseCasePort.Ports
+namespace Miplazoleta.UseCasePort.Ports
 {
-    public interface ICreatePlatoOutputPort
+    public  interface IAgregarPlatoToMenuOutputPort
     {
-        Task Handle(PlatoDTO Plato);
+        Task Handle(MenuDTO menu,PlatoDTO plato);
     }
 }

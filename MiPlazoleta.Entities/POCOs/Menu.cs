@@ -8,13 +8,10 @@ namespace MiPlazoleta.Entities.POCOs
 {
      public class Menu
     {
-        public int Id { get; set; }
+        public int IdMenu { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-
-        public virtual IEnumerable<Plato> platos { get; set; }
-
-
+        public virtual IEnumerable<PlatoMenu> PlatoMenu { get; set; }
 
     }
 }

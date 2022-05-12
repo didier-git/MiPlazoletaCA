@@ -6,13 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiPlazoleta.Entities.Interfaces
+namespace MiPlazoleta.UseCasePort.Ports
 {
-    public interface IRepositorioMenu
+    public interface IGetMenuOutputPort
     {
-        void CrearMenu(Menu menu);
-        IEnumerable<Menu> GetMenus();
-
-        Menu GetMenu(int id);
+        Task Handle(IEnumerable<MenuDTO> Menus);
     }
 }

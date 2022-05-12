@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enterprise Business Rules", "Enterprise Business Rules", "{289C2C27-02F1-4AF3-84B2-3CBCF197302D}"
 EndProject
@@ -17,25 +17,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{36
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.RepositorioEFcore", "Mipalzoleta.RepositorioEFcore\Miplazoleta.RepositorioEFcore.csproj", "{BFB0B7CB-B902-4DF5-BAD0-0791D732A7FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miplazoleta.DTOs", "Miplazoleta.DTOs\Miplazoleta.DTOs.csproj", "{B310D8E3-652F-47EB-BFCF-3207E0172619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.DTOs", "Miplazoleta.DTOs\Miplazoleta.DTOs.csproj", "{B310D8E3-652F-47EB-BFCF-3207E0172619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miplazoleta.UseCasePort", "Miplazoleta.UseCasePort\Miplazoleta.UseCasePort.csproj", "{BA254EA9-7B9B-42E3-A35A-3592E1CB656E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.UseCasePort", "Miplazoleta.UseCasePort\Miplazoleta.UseCasePort.csproj", "{BA254EA9-7B9B-42E3-A35A-3592E1CB656E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miplazoleta.UseCases", "Miplazoleta.UseCases\Miplazoleta.UseCases.csproj", "{29CB2967-51B6-4290-8245-44DE7014AF33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.UseCases", "Miplazoleta.UseCases\Miplazoleta.UseCases.csproj", "{29CB2967-51B6-4290-8245-44DE7014AF33}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controllers", "Controllers", "{8CA67D32-4F4E-4909-97C3-91CAEDF83F16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miplazoleta.Controllers", "Miplazoleta.Controllers\Miplazoleta.Controllers.csproj", "{8E32D84F-2214-47EA-B12E-4E3D27F2FFAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.Controllers", "Miplazoleta.Controllers\Miplazoleta.Controllers.csproj", "{8E32D84F-2214-47EA-B12E-4E3D27F2FFAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{E8845F1F-EBDA-44EB-B97C-3436075A9DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miplazoleta.Presenters", "Miplazoleta.Presenters\Miplazoleta.Presenters.csproj", "{4A27CDFB-1F9D-4DE7-A108-EFE655FFB36E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.Presenters", "Miplazoleta.Presenters\Miplazoleta.Presenters.csproj", "{4A27CDFB-1F9D-4DE7-A108-EFE655FFB36E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miplazoleta.IoC", "Miplazoleta.IoC\Miplazoleta.IoC.csproj", "{F5D27D4A-CDD0-463C-B9D8-054F204FFC99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.IoC", "Miplazoleta.IoC\Miplazoleta.IoC.csproj", "{F5D27D4A-CDD0-463C-B9D8-054F204FFC99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIs", "UIs", "{9D6D8E74-084E-48E1-B647-ED281C897E8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miplazoleta.Api", "Miplazoleta.Api\Miplazoleta.Api.csproj", "{0231F524-8A9D-470B-B7F9-3F6CDAE54294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miplazoleta.Api", "Miplazoleta.Api\Miplazoleta.Api.csproj", "{0231F524-8A9D-470B-B7F9-3F6CDAE54294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -16,15 +16,28 @@ namespace Mipalzoleta.RepositorioEFcore.DataContext
 
         public DbSet<Menu> Menus { get; set; }
 
+        public DbSet<PlatoMenu> PlatosMenus { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder model)
         {
-            model.Entity<Menu>()
-                .HasKey(m => m.Id);
-            model.Entity<Menu>()
-                .HasMany(p => p.platos)
-                .WithMany(m => m.Menus);
+            
+            
+            model.Entity<PlatoMenu>().HasKey(sc => new { sc.PlatoId, sc.MenuId });
+            model.Entity<Menu>().HasKey(m => m.IdMenu);
+            model.Entity<Plato>().HasKey(p => p.IdPlato);
+
+            model.Entity<PlatoMenu>()
+                .HasOne<Plato>(sc => sc.Plato)
+                .WithMany(s => s.PlatoMenu)
+                .HasForeignKey(sc => sc.PlatoId);
+
+
+            model.Entity<PlatoMenu>()
+                .HasOne<Menu>(sc => sc.Menu)
+                .WithMany(s => s.PlatoMenu)
+                .HasForeignKey(sc => sc.MenuId);
 
         }
     }

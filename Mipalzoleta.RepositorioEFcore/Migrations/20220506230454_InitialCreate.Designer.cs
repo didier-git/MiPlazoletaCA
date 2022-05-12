@@ -8,34 +8,19 @@ using Mipalzoleta.RepositorioEFcore.DataContext;
 namespace Miplazoleta.RepositorioEFcore.Migrations
 {
     [DbContext(typeof(MiplazoletaDbContext))]
-    [Migration("20220429031928_tablaMenu")]
-    partial class tablaMenu
+    [Migration("20220506230454_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.10");
-
-            modelBuilder.Entity("MenuPlato", b =>
-                {
-                    b.Property<int>("MenusId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("platosId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MenusId", "platosId");
-
-                    b.HasIndex("platosId");
-
-                    b.ToTable("MenuPlato");
-                });
+                .HasAnnotation("ProductVersion", "5.0.5");
 
             modelBuilder.Entity("MiPlazoleta.Entities.POCOs.Menu", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdMenu")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -45,14 +30,14 @@ namespace Miplazoleta.RepositorioEFcore.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdMenu");
 
                     b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("MiPlazoleta.Entities.POCOs.Plato", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdPlato")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -65,24 +50,53 @@ namespace Miplazoleta.RepositorioEFcore.Migrations
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(65,30)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdPlato");
 
                     b.ToTable("Platos");
                 });
 
-            modelBuilder.Entity("MenuPlato", b =>
+            modelBuilder.Entity("MiPlazoleta.Entities.POCOs.PlatoMenu", b =>
                 {
-                    b.HasOne("MiPlazoleta.Entities.POCOs.Menu", null)
-                        .WithMany()
-                        .HasForeignKey("MenusId")
+                    b.Property<int>("PlatoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MenuId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PlatoId", "MenuId");
+
+                    b.HasIndex("MenuId");
+
+                    b.ToTable("PlatosMenus");
+                });
+
+            modelBuilder.Entity("MiPlazoleta.Entities.POCOs.PlatoMenu", b =>
+                {
+                    b.HasOne("MiPlazoleta.Entities.POCOs.Menu", "Menu")
+                        .WithMany("PlatoMenu")
+                        .HasForeignKey("MenuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MiPlazoleta.Entities.POCOs.Plato", null)
-                        .WithMany()
-                        .HasForeignKey("platosId")
+                    b.HasOne("MiPlazoleta.Entities.POCOs.Plato", "Plato")
+                        .WithMany("PlatoMenu")
+                        .HasForeignKey("PlatoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Menu");
+
+                    b.Navigation("Plato");
+                });
+
+            modelBuilder.Entity("MiPlazoleta.Entities.POCOs.Menu", b =>
+                {
+                    b.Navigation("PlatoMenu");
+                });
+
+            modelBuilder.Entity("MiPlazoleta.Entities.POCOs.Plato", b =>
+                {
+                    b.Navigation("PlatoMenu");
                 });
 #pragma warning restore 612, 618
         }

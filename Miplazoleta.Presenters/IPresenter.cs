@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Miplazoleta.Presenters
+namespace MiPlazoleta.Presenters
 {
     public interface IPresenter<FormatDataType>
     {

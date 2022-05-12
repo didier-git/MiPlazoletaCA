@@ -1,12 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Miplazoleta.UseCasePort.Ports;
+using Miplazoleta.Presenters;
+using MiPlazoleta.UseCasePort.Ports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Miplazoleta.Presenters
+namespace MiPlazoleta.Presenters
 {
     public static class DependencyContainar
     {
@@ -14,6 +15,8 @@ namespace Miplazoleta.Presenters
         {
             services.AddScoped<ICreatePlatoOutputPort, CreatePlatoPresenter>();
             services.AddScoped<IGetPlatosOutputPort, GetPlatosPresenter>();
+            services.AddScoped<ICrearMenuOutputPort,CrearMenuPresenter>();
+            services.AddScoped<IGetMenuOutputPort, GetMenuPresenter>();
 
             return services;
         }

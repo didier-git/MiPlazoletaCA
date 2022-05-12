@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Miplazoleta.DTOs\Miplazoleta.DTOs.csproj" />
+    <ProjectReference Include="..\MiPlazoleta.Entities\MiPlazoleta.Entities.csproj" />
   </ItemGroup>
 
 </Project>

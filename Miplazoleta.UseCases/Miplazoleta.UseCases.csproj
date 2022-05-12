@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mipalzoleta.RepositorioEFcore\Miplazoleta.RepositorioEFcore.csproj" />
+    <ProjectReference Include="..\Miplazoleta.Controllers\Miplazoleta.Controllers.csproj" />
     <ProjectReference Include="..\MiPlazoleta.Entities\MiPlazoleta.Entities.csproj" />
     <ProjectReference Include="..\Miplazoleta.UseCasePort\Miplazoleta.UseCasePort.csproj" />
   </ItemGroup>

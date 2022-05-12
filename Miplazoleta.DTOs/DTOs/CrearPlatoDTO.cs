@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Miplazoleta.DTOs.DTOs
+namespace MiPlazoleta.DTOs.DTOs
 {
     public class CrearPlatoDTO
     {
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public Decimal precio { get; set; }
+        public string Nombre { get; init; }
+        public string Descripcion { get; init; }
+        public Decimal precio { get; init; }
     }
 }

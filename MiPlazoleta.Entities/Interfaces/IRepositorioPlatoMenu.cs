@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace MiPlazoleta.Entities.Interfaces
 {
-    public interface IRepositorioPlato
+    public interface IRepositorioPlatoMenu
     {
-        void Crear(Plato plato);
-        IEnumerable<Plato> GetAll();
-        Plato GetPlato(int id);
+        PlatoMenu GetPlatoMenu(int id);
+
+        void AddPlatoMenu(PlatoMenu menu);    
+
     }
 }

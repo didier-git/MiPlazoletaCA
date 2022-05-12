@@ -1,12 +1,12 @@
-﻿using Miplazoleta.DTOs.DTOs;
-using Miplazoleta.UseCasePort.Ports;
+﻿using MiPlazoleta.DTOs.DTOs;
+using MiPlazoleta.UseCasePort.Ports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Miplazoleta.Presenters
+namespace MiPlazoleta.Presenters
 {
     public class CreatePlatoPresenter : IPresenter<PlatoDTO>, ICreatePlatoOutputPort
     {

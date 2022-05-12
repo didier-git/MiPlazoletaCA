@@ -1,9 +1,10 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Mipalzoleta.RepositorioEFcore.DataContext;
-using Miplazoleta.DTOs.DTOs;
-using Miplazoleta.Presenters;
-using Miplazoleta.UseCasePort.Ports;
+using MiPlazoleta.DTOs.DTOs;
+using MiPlazoleta.Presenters;
+using MiPlazoleta.UseCasePort.Ports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 
 
-namespace Miplazoleta.Controllers
+namespace MiPlazoleta.Controllers
 {
     
     [Route("Api/[controller]")]
@@ -21,14 +22,25 @@ namespace Miplazoleta.Controllers
     {
         readonly ICreatePlatoInputPort InputPort;
         readonly ICreatePlatoOutputPort OutputPort;
+        //public readonly IServiceProvider ServiceProvider;
         public CreatePlatoController(
-            ICreatePlatoInputPort inputPort, ICreatePlatoOutputPort outputPort) => 
-            (InputPort,OutputPort) = (inputPort,outputPort);  
+            ICreatePlatoInputPort inputPort, ICreatePlatoOutputPort outputPort) =>
+            (InputPort, OutputPort) = (inputPort, outputPort);
+        //public CreatePlatoController(IServiceProvider serviceProvider) => ServiceProvider = serviceProvider;
+        
         [HttpPost]
         public async Task<PlatoDTO> CrearPlato(CrearPlatoDTO plato)
         {
+            //using IServiceScope scope = ServiceProvider.CreateScope();
+
+            //IServiceProvider serviceProvider = scope.ServiceProvider;
+            //var InputPort = serviceProvider.GetRequiredService<ICreatePlatoInputPort>();
+            //var OutputPort = serviceProvider.GetRequiredService<ICreatePlatoOutputPort>();
+
+
             await InputPort.Handle(plato);
             return ((IPresenter<PlatoDTO>)OutputPort).Content;
+            
         }
         
     }

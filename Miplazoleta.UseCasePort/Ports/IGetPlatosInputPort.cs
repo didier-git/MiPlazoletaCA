@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Miplazoleta.UseCasePort.Ports
+namespace MiPlazoleta.UseCasePort.Ports
 {
     public interface IGetPlatosInputPort
     {

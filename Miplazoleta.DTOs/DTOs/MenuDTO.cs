@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MiPlazoleta.DTOs.DTOs
 {
-    public class PlatoDTO
+    public class MenuDTO
     {
         public int Id { get; init; }
         public string Nombre { get; init; }
         public string Descripcion { get; init; }
-        public Decimal Precio { get; init; }
+
     }
 }
