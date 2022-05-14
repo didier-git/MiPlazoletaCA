@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Miplazoleta.Presenters;
+using Miplazoleta.UseCasePort.Ports;
 using MiPlazoleta.UseCasePort.Ports;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace MiPlazoleta.Presenters
             services.AddScoped<IGetPlatosOutputPort, GetPlatosPresenter>();
             services.AddScoped<ICrearMenuOutputPort,CrearMenuPresenter>();
             services.AddScoped<IGetMenuOutputPort, GetMenuPresenter>();
+            services.AddScoped<IAgregarPlatoToMenuOutputPort, AgregarPlatoToMenuPresenter>();
 
             return services;
         }

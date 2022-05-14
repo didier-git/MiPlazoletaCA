@@ -14,5 +14,7 @@ namespace MiPlazoleta.Entities.Interfaces
         IEnumerable<Menu> GetMenus();
 
         Menu GetMenu(int id);
+
+
     }
 }

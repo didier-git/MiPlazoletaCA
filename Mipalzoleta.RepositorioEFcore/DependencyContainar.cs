@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Miplazoleta.RepositorioEFcore.Repositorios;
 
 namespace MiPlazoleta.RepositorioEFcore
 {
@@ -24,6 +25,7 @@ namespace MiPlazoleta.RepositorioEFcore
            
             services.AddTransient<IRepositorioPlato, RepositorioPlato>();
             services.AddTransient<IRepositorioMenu, RepositorioMenu>();
+            services.AddTransient<IRepositorioPlatoMenu, RepositorioPlatoMenu>();
             services.AddTransient<IUnitOfWork,UnitOfWork>();
             
             return services;

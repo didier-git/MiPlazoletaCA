@@ -1,4 +1,5 @@
-﻿using Miplazoleta.UseCasePort.Ports;
+﻿using Miplazoleta.DTOs.DTOs;
+using Miplazoleta.UseCasePort.Ports;
 using MiPlazoleta.DTOs.DTOs;
 using MiPlazoleta.Entities.Interfaces;
 using MiPlazoleta.Entities.POCOs;
@@ -37,8 +38,18 @@ namespace Miplazoleta.UseCases.AgregarPlatoToMenu
                 Plato = Plato,
             };
 
+            
             ContextPlatoMenu.AddPlatoMenu(NewPlatoMenu);
-           
+            
+            
+            PlatoMenuAddDto PlatoMenuNew = new()
+            {
+                IdMenu = NewPlatoMenu.MenuId,
+                IdPlato = NewPlatoMenu.PlatoId
+
+            };
+            await UnitOfWork.SaveChanges();
+            await OutputPort.Handle(PlatoMenuNew);
            
         }
     }

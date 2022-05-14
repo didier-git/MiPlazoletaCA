@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Miplazoleta.Controllers;
+using Miplazoleta.UseCasePort.Ports;
+using Miplazoleta.UseCases.AgregarPlatoToMenu;
 using Miplazoleta.UseCases.GetMenus;
 using MiPlazoleta.Controllers;
 using MiPlazoleta.UseCasePort.Ports;
@@ -24,7 +26,8 @@ namespace MiPlazoleta.UseCases
             services.AddTransient<ICrearMenuInputPort, CrearMenuInteractor>()
                     .AddTransient<IGetMenuInputPort, GetMenusInteractor>()
                     .AddTransient<ICreatePlatoInputPort, CrearPlatoInteractor>()
-                    .AddTransient<IGetPlatosInputPort, GetPlatosInteractor>();
+                    .AddTransient<IGetPlatosInputPort, GetPlatosInteractor>()
+                    .AddTransient<IAddPlatoToMenuInputPort, AgregarPlatoToMenuInteractor>();
            
 
             return services;
