@@ -25,7 +25,7 @@ namespace Miplazoleta.Controllers
         [HttpPost]
         public async Task<PlatoMenuAddDto> AgregarPlatoToMenu(int IdMenu , int IdPlato)
         {
-            await InputPort.Handle(IdMenu,IdMenu);
+            await InputPort.Handle(IdMenu,IdPlato);
             return ((IPresenter<PlatoMenuAddDto>)OutputPort).Content;
         }
         

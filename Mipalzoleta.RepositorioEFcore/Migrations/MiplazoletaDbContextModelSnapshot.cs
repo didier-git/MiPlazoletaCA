@@ -14,7 +14,7 @@ namespace Miplazoleta.RepositorioEFcore.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.5");
+                .HasAnnotation("ProductVersion", "5.0.10");
 
             modelBuilder.Entity("MiPlazoleta.Entities.POCOs.Menu", b =>
                 {
@@ -55,15 +55,21 @@ namespace Miplazoleta.RepositorioEFcore.Migrations
 
             modelBuilder.Entity("MiPlazoleta.Entities.POCOs.PlatoMenu", b =>
                 {
-                    b.Property<int>("PlatoId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("MenuId")
                         .HasColumnType("int");
 
-                    b.HasKey("PlatoId", "MenuId");
+                    b.Property<int>("PlatoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("MenuId");
+
+                    b.HasIndex("PlatoId");
 
                     b.ToTable("PlatosMenus");
                 });

@@ -33,7 +33,7 @@ namespace MiPlazoleta.RepositorioEFcore.Repositorios
             return context.Platos.ToList();
         }
 
-        public Plato GetPlato(int id)
+        public Plato GetPlato(int? id)
         {
 
             return context.Platos.Find(id);   

@@ -12,7 +12,8 @@ namespace MiPlazoleta.Entities.POCOs
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public Decimal precio { get; set; }
-        public virtual IEnumerable<PlatoMenu> PlatoMenu { get; set; }
+        public virtual ICollection<PlatoMenu> PlatoMenu { get; set; }
+
 
     }
 }

@@ -38,7 +38,7 @@ namespace MiPlazoleta.RepositorioEFcore.Repositorios
             return context.Menus.ToList();
         }
 
-        public Menu GetMenu(int id)
+        public Menu GetMenu(int? id)
         {
 
             return context.Menus.Find(id);

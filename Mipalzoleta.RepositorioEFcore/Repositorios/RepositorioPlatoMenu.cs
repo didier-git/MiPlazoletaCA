@@ -19,9 +19,17 @@ namespace Miplazoleta.RepositorioEFcore.Repositorios
             Context.PlatosMenus.Add(menu);
         }
 
-        public PlatoMenu GetPlatoMenu(int id)
+        public PlatoMenu GetPlatoMenu(int? id)
         {
             return Context.PlatosMenus.Find(id); 
+        }
+
+        public ICollection<PlatoMenu> GetPlatoMenuList(int? id)
+        {
+            var list = Context.PlatosMenus.Where(c=>c.MenuId==id).ToList();
+
+            return list;
+
         }
     }
 }

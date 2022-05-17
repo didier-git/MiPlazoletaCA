@@ -25,6 +25,7 @@ namespace Mipalzoleta.RepositorioEFcore.DataContext
             
             
             model.Entity<PlatoMenu>().HasKey(sc => new { sc.PlatoId, sc.MenuId });
+            //model.Entity<PlatoMenu>().HasKey(x => x.Id);
             model.Entity<Menu>().HasKey(m => m.IdMenu);
             model.Entity<Plato>().HasKey(p => p.IdPlato);
 

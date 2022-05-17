@@ -13,7 +13,7 @@ namespace MiPlazoleta.Entities.Interfaces
         void CrearMenu(Menu menu);
         IEnumerable<Menu> GetMenus();
 
-        Menu GetMenu(int id);
+        Menu GetMenu(int? id);
 
 
     }

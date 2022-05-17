@@ -9,9 +9,11 @@ namespace MiPlazoleta.Entities.Interfaces
 {
     public interface IRepositorioPlatoMenu
     {
-        PlatoMenu GetPlatoMenu(int id);
+        PlatoMenu GetPlatoMenu(int? id);
 
-        void AddPlatoMenu(PlatoMenu menu);    
+        void AddPlatoMenu(PlatoMenu menu);
+        
+        ICollection<PlatoMenu> GetPlatoMenuList(int? id);    
 
     }
 }

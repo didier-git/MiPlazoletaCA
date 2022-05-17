@@ -1,4 +1,4 @@
-﻿using MiPlazoleta.DTOs.DTOs;
+﻿using Miplazoleta.DTOs.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Miplazoleta.UseCasePort.Ports
 {
-    public interface IAddPlatoToMenuInputPort
+    public interface IGetMenuPlatosOutputPort
     {
-        Task Handle(int? idMenu, int? plato);
+        Task Handle(PlatoMenuGetDto menu);
     }
 }

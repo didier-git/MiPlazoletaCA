@@ -25,31 +25,25 @@ namespace Miplazoleta.UseCases.AgregarPlatoToMenu
             (ContextMenu, ContextPlato, UnitOfWork, OutputPort, ContextPlatoMenu) = 
             (contextMenu, contextPlato, unitOfWork, outputPort, contextPlatoMenu);
        
-        public async Task Handle(int idMenu, int IdPlato)
+        public async Task Handle(int? idMenu, int? IdPlato)
         {
             var Menu = ContextMenu.GetMenu(idMenu);
             var Plato = ContextPlato.GetPlato(IdPlato);
-
-            PlatoMenu NewPlatoMenu = new()
+            
+            ContextPlatoMenu.AddPlatoMenu(new()
             {
-                MenuId = Menu.IdMenu,
-                PlatoId = Plato.IdPlato,
                 Menu = Menu,
-                Plato = Plato,
-            };
+                Plato = Plato
 
-            
-            ContextPlatoMenu.AddPlatoMenu(NewPlatoMenu);
-            
-            
-            PlatoMenuAddDto PlatoMenuNew = new()
-            {
-                IdMenu = NewPlatoMenu.MenuId,
-                IdPlato = NewPlatoMenu.PlatoId
-
-            };
+            });
+           
             await UnitOfWork.SaveChanges();
-            await OutputPort.Handle(PlatoMenuNew);
+            await OutputPort.Handle( new()
+            {
+                IdMenu = (int)idMenu,
+                IdPlato = (int)IdPlato
+
+            });
            
         }
     }
