@@ -19,21 +19,14 @@ namespace Miplazoleta.Controllers
 
         readonly IGetMenuInputPort InputPort;
         readonly IGetMenuOutputPort OutputPort;
-        //public readonly IServiceProvider ServiceProvider;
-
+       
         public GetMenuController(
             IGetMenuInputPort inputPort, IGetMenuOutputPort outputPort)
-            => (InputPort, OutputPort) = (inputPort, outputPort);
-        //public GetMenuController(IServiceProvider serviceProvider)=>ServiceProvider = serviceProvider;  
+            => (InputPort, OutputPort) = (inputPort, outputPort); 
 
         [HttpGet]
         public async Task <IEnumerable<MenuDTO>> GetMenus()
         {
-            //using IServiceScope scope = ServiceProvider.CreateScope();  
-            //IServiceProvider serviceProvider = scope.ServiceProvider; 
-            //var InputPort = ServiceProvider.GetRequiredService<IGetMenuInputPort>();
-            //var OutputPort = ServiceProvider.GetRequiredService<IGetMenuOutputPort>();  
-           
             await InputPort.Handle();
             return ((IPresenter<IEnumerable<MenuDTO>>)OutputPort).Content;
         }

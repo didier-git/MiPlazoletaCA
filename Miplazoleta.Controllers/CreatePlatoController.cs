@@ -31,12 +31,6 @@ namespace MiPlazoleta.Controllers
         [HttpPost]
         public async Task<PlatoDTO> CrearPlato(CrearPlatoDTO plato)
         {
-            //using IServiceScope scope = ServiceProvider.CreateScope();
-
-            //IServiceProvider serviceProvider = scope.ServiceProvider;
-            //var InputPort = serviceProvider.GetRequiredService<ICreatePlatoInputPort>();
-            //var OutputPort = serviceProvider.GetRequiredService<ICreatePlatoOutputPort>();
-
 
             await InputPort.Handle(plato);
             return ((IPresenter<PlatoDTO>)OutputPort).Content;

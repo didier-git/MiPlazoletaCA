@@ -38,5 +38,11 @@ namespace MiPlazoleta.RepositorioEFcore.Repositorios
 
             return context.Platos.Find(id);   
         }
+
+        public void DeletePlato(Plato plato)
+        {
+
+            context.Platos.Remove(plato);
+        }
     }
 }
