@@ -20,7 +20,7 @@ namespace MiPlazoleta.Api
 {
     public class Startup
     {
-          
+        private readonly string Mycors = "MyCors";
          
         public Startup(IConfiguration configuration)
         {
@@ -44,6 +44,12 @@ namespace MiPlazoleta.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Miplazoleta.Api", Version = "v1" });
             });
 
+            services.AddCors(options => options.AddPolicy(Mycors,builder => {
+
+                builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+            
+            }));
+
             services.AddMiplazoletaDependencies(Configuration);
         }
 
@@ -61,9 +67,11 @@ namespace MiPlazoleta.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(Mycors);
 
             app.UseAuthorization();
 
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
