@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Mipalzoleta.RepositorioEFcore.DataContext;
 using MiPlazoleta.DTOs.DTOs;
 using MiPlazoleta.Entities.Interfaces;
@@ -42,6 +43,20 @@ namespace MiPlazoleta.RepositorioEFcore.Repositorios
         {
 
             return context.Menus.Find(id);
+        }
+
+        public bool DeleteMenu(Menu menu)
+        {
+           context.Remove(menu);
+
+            return true;
+
+        }
+
+        public List<Menu> GetMenuPlatos(int? id)
+        {
+            return context.Menus.Where(m=>m.IdMenu == id).Include(pm=> pm.PlatoMenu).ToList();
+         
         }
     }
 }

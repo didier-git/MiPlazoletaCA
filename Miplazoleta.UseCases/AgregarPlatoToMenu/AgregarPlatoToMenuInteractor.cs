@@ -16,26 +16,36 @@ namespace Miplazoleta.UseCases.AgregarPlatoToMenu
         public readonly IRepositorioMenu ContextMenu;
         public readonly IRepositorioPlato ContextPlato; 
         public readonly IUnitOfWork UnitOfWork;
-        public readonly IRepositorioPlatoMenu ContextPlatoMenu;
+        
         public readonly IAgregarPlatoToMenuOutputPort OutputPort;
 
         public AgregarPlatoToMenuInteractor
             (IRepositorioMenu contextMenu, IRepositorioPlato contextPlato
-            , IUnitOfWork unitOfWork, IAgregarPlatoToMenuOutputPort outputPort, IRepositorioPlatoMenu contextPlatoMenu) => 
-            (ContextMenu, ContextPlato, UnitOfWork, OutputPort, ContextPlatoMenu) = 
-            (contextMenu, contextPlato, unitOfWork, outputPort, contextPlatoMenu);
+            , IUnitOfWork unitOfWork, IAgregarPlatoToMenuOutputPort outputPort) => 
+            (ContextMenu, ContextPlato, UnitOfWork, OutputPort) = 
+            (contextMenu, contextPlato, unitOfWork, outputPort);
        
         public async Task Handle(int? idMenu, int? IdPlato)
         {
             var Menu = ContextMenu.GetMenu(idMenu);
             var Plato = ContextPlato.GetPlato(IdPlato);
-            
-            ContextPlatoMenu.AddPlatoMenu(new()
-            {
-                Menu = Menu,
-                Plato = Plato
 
-            });
+            PlatoMenu platoMenu = new PlatoMenu();
+            platoMenu.MenuId = Menu.IdMenu;
+            platoMenu.PlatoId = Plato.IdPlato;
+            platoMenu.Menu = Menu;
+            platoMenu.Plato = Plato;
+            if (Menu.PlatoMenu == null)
+            {
+                Menu.PlatoMenu = new List<PlatoMenu>();
+
+                Menu.PlatoMenu.Add(platoMenu);
+            }
+            else
+            {
+                Menu.PlatoMenu.Append(platoMenu);
+            }
+           
            
             await UnitOfWork.SaveChanges();
             await OutputPort.Handle( new()

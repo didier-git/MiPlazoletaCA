@@ -11,7 +11,7 @@ namespace MiPlazoleta.Entities.POCOs
         public int IdMenu { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public virtual ICollection<PlatoMenu> PlatoMenu { get; set; }
+        public  virtual List<PlatoMenu> PlatoMenu { get; set; }
 
 
     }

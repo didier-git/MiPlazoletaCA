@@ -32,8 +32,9 @@ namespace Miplazoleta.UseCases.DeleteMenu
                 Descripcion = menu.Descripcion
 
             };
+
+            Repositorio.DeleteMenu(menu);
             await OutputPort.Handle(Menu);
-            await Repositorio.DeleteMenu(menu);
             await UnitOfWork.SaveChanges();
         }
     }

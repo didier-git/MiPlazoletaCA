@@ -21,6 +21,7 @@ namespace MiPlazoleta.Presenters
             services.AddScoped<IAgregarPlatoToMenuOutputPort, AgregarPlatoToMenuPresenter>();
             services.AddScoped<IGetMenuPlatosOutputPort, GetMenuPlatosPresenter>();
             services.AddScoped<IDeletePlatoOutputPort, DeletePlatoPresenter>();
+            services.AddScoped<IDeleteMenuOutputPort, DeleteMenuPresenter>();
 
             return services;
         }
