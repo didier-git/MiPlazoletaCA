@@ -1,4 +1,5 @@
 ﻿using Miplazoleta.UseCasePort.Ports;
+using MiPlazoleta.DTOs.DTOs;
 using MiPlazoleta.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,21 +19,23 @@ namespace Miplazoleta.UseCases.DeletePlato
             =>(RepositorioPlato, UnitOfWork, OutputPort) 
             =(repositorioPlato, unitOfWork, outputPort);
         
-        public Task Handle(int? platoId)
+        public async Task Handle(int? platoId)
         {
             var Plato = RepositorioPlato.GetPlato(platoId);
 
-            RepositorioPlato.DeletePlato(Plato);
-            OutputPort.Handle(new()
+            PlatoDTO platoDto = new()
             {
                 Id = Plato.IdPlato,
                 Nombre = Plato.Nombre,
                 Descripcion = Plato.Descripcion,
                 Precio = Plato.precio
 
-            });
-            UnitOfWork.SaveChanges();
-            return Task.CompletedTask;   
+            };
+
+            RepositorioPlato.DeletePlato(Plato);
+            await OutputPort.Handle(platoDto);
+            await UnitOfWork.SaveChanges();
+              
 
 
         }

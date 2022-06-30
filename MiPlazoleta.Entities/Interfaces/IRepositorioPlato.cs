@@ -12,6 +12,6 @@ namespace MiPlazoleta.Entities.Interfaces
         void Crear(Plato plato);
         IEnumerable<Plato> GetAll();
         Plato GetPlato(int? id);
-        void DeletePlato(Plato plato);  
+        bool DeletePlato(Plato plato);  
     }
 }

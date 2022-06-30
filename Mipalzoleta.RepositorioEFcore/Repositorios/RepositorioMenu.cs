@@ -53,9 +53,9 @@ namespace MiPlazoleta.RepositorioEFcore.Repositorios
 
         }
 
-        public List<Menu> GetMenuPlatos(int? id)
+        public Menu GetMenuPlatos(int? id)
         {
-            return context.Menus.Where(m=>m.IdMenu == id).Include(pm=> pm.PlatoMenu).ToList();
+            return context.Menus.Include(pm => pm.PlatoMenu).Single(m=> m.IdMenu == id);
          
         }
     }

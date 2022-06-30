@@ -15,6 +15,8 @@ namespace Mipalzoleta.RepositorioEFcore.DataContext
         public DbSet<Plato> Platos { get; set; }
         public DbSet<Menu> Menus { get; set; }
 
+        //public DbSet<PlatoMenu> PlatoMenu { get; set; }
+
 
 
 

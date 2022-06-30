@@ -8,6 +8,7 @@ namespace MiPlazoleta.Entities.POCOs
 {
     public class PlatoMenu
     {
+
         public int PlatoId { get; set; }
         public Plato Plato { get; set; }
         public int MenuId { get; set; }

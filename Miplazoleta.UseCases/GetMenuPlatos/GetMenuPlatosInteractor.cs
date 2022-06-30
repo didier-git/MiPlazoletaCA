@@ -25,7 +25,10 @@ namespace Miplazoleta.UseCases.GetMenuPlatos
         
         public async Task Handle(int? idMenu)
         {
-            var menu = ContextMenu.GetMenu(idMenu);
+            //var menu = ContextMenu.GetMenu(idMenu);
+            var menu = ContextMenu.GetMenuPlatos(idMenu);
+
+           
 
             PlatoMenuGetDto MenuPlato = new()
             {

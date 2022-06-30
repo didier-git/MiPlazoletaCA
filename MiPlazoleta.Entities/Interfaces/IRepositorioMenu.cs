@@ -15,7 +15,7 @@ namespace MiPlazoleta.Entities.Interfaces
 
         Menu GetMenu(int? id);
         bool DeleteMenu(Menu menu);
-        List<Menu> GetMenuPlatos(int? id);    
+        Menu GetMenuPlatos(int? id);    
 
 
     }
